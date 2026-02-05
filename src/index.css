@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #1a1a1a;       
+  --color-brand-accent: #3d2b1f;     
+  --color-brand-gold: #a67c52;       
+  --color-whatsapp-green: #25d366;
+}
