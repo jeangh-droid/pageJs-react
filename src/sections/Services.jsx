@@ -42,7 +42,7 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#3D2B1F] mb-6 font-serif italic">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#3D2B1F] mb-6 font-serif italic">
               Nuestros servicios
             </h1>
             <div className="w-20 h-1 bg-[#a67c52] mx-auto mb-8 rounded-full"></div>

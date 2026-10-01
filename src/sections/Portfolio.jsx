@@ -17,12 +17,19 @@ const Portfolio = () => {
     },
     {
       "id": 2,
+      "title": "Comedor",
+      "desc": "Observa cual es el resultado final de un comedor realizado por J&S carpintería",
+      "video": "videoTrabajo.mp4",
+      "poster": "trabajoVideo.png"
+    },
+    {
+      "id": 3,
       "title": "Puertas con Diseño Vidriado",
       "desc": "Fabricación e instalación de marcos y puertas con divisiones para vidrio.",
       "img": "puerta vidrio.png"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Portones Monumentales",
       "desc": "Portón principal de gran formato en madera tratada con estructura reforzada y acabados para exteriores.",
       "img": "porton.png"
@@ -30,11 +37,10 @@ const Portfolio = () => {
   ];
 
   return (
-    <section className="bg-[#FDFBF7] min-h-screen pt-32 pb-24">
+    <section id="portfolio" className="bg-[#FDFBF7] pt-50">
       <div className="container mx-auto px-6">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#a67c52] font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Fotos de trabajos</span>
             <h2 className="text-4xl md:text-6xl font-bold text-[#3D2B1F] font-serif italic mb-6 text-balance">Muebles entregados</h2>
             <p className="text-gray-500 text-lg">
               Mira cómo quedan nuestros muebles ya instalados en las casas de nuestros clientes en todo Lima.
@@ -51,17 +57,30 @@ const Portfolio = () => {
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 onClick={() => setSelectedWork(work)}
               >
-                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  <img 
-                    src={work.img} 
-                    alt={work.title} 
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  />
+                <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
+                  {work.video ? (
+                    <video 
+                      className="w-full h-full object-cover"
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline
+                      poster={work.poster}
+                    >
+                      <source src={work.video} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img 
+                      src={work.img} 
+                      alt={work.title} 
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                     <h3 className="text-white text-2xl font-bold mb-2">{work.title}</h3>
                     <div className="flex items-center text-white/80 text-sm gap-2">
-                      <Maximize2 size={16} /> Ver fotos
+                      <Maximize2 size={16} /> Ver detalles
                     </div>
                   </div>
                 </div>
@@ -95,12 +114,26 @@ const Portfolio = () => {
                 <X className="text-white w-5 h-5 md:w-6 md:h-6" />
               </button>
               
-              <div className="w-full md:w-3/5 shrink-0 bg-gray-200 aspect-square md:aspect-auto">
-                <img 
-                  src={selectedWork.img} 
-                  alt={selectedWork.title} 
-                  className="w-full h-full object-cover" 
-                />
+              <div className="w-full md:w-3/5 shrink-0 bg-gray-200 aspect-square md:aspect-auto relative">
+                {selectedWork.video ? (
+                  <video 
+                    className="w-full h-full object-cover"
+                    autoPlay 
+                    muted 
+                    loop 
+                    controls
+                    playsInline
+                    poster={selectedWork.poster}
+                  >
+                    <source src={selectedWork.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img 
+                    src={selectedWork.img} 
+                    alt={selectedWork.title} 
+                    className="w-full h-full object-cover" 
+                  />
+                )}
               </div>
               
               <div className="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-[#FDFBF7]">
