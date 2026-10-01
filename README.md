@@ -8,7 +8,7 @@ El proyecto presenta los servicios, proyectos y trabajos realizados por la carpi
 
 ## Vista previa
 
-![Vista previa de Carpintería J&S](/src/assets/Carpinteria.mp4)
+![Vista previa de Carpintería J&S](/src/assets/Carpinteria.gif)
 
 ---
 
